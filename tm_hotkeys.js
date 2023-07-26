@@ -9,7 +9,7 @@
     tm_hotkeys.title = 'TM Hotkeys'
     tm_hotkeys.version = 'v 1.0'
 
-    console.info(`${tm_hotkeys.title} (${tm_hotkeys.version}) > Loaded`)
+    //console.info(`${tm_hotkeys.title} (${tm_hotkeys.version}) > Loaded`)
 
     return (keys = []) => {
 
@@ -63,7 +63,7 @@
             }
         }
 
-        tm_hotkeys.info = () => {
+        tm_hotkeys.info = (callback = null) => {
 
             if(tm_hotkeys.keys && tm_hotkeys.keys.length > 0) {
 
@@ -78,6 +78,10 @@
             } else {
 
                 console.log('INFO > NO HOTKEYS')
+            }
+
+            if(callback) {
+                callback()
             }
         }
 
